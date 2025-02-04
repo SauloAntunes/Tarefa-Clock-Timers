@@ -1,0 +1,52 @@
+{
+    "version": 1,
+    "author": "SAULO CARVALHO ANTUNES DA CRUZ",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "board-pi-pico-w",
+        "id": "pico",
+        "top": -12.85,
+        "left": 99.55,
+        "attrs": { "builder": "pico-sdk" }
+      },
+      { "type": "wokwi-led", "id": "led1", "top": 150, "left": -73, "attrs": { "color": "green" } },
+      { "type": "wokwi-led", "id": "led2", "top": 102, "left": -73, "attrs": { "color": "yellow" } },
+      { "type": "wokwi-led", "id": "led3", "top": 44.4, "left": -73, "attrs": { "color": "red" } },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 80.75,
+        "left": -9.6,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r2",
+        "top": 138.35,
+        "left": -9.6,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r3",
+        "top": 186.35,
+        "left": -9.6,
+        "attrs": { "value": "330" }
+      }
+    ],
+    "connections": [
+      [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+      [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+      [ "r1:2", "pico:GP11", "green", [ "v0", "h37.2", "v38.4" ] ],
+      [ "r2:2", "pico:GP12", "green", [ "v0" ] ],
+      [ "r3:2", "pico:GP13", "green", [ "v0", "h37.2", "v-19.2" ] ],
+      [ "r1:1", "led3:A", "green", [ "v0" ] ],
+      [ "r2:1", "led2:A", "green", [ "v0" ] ],
+      [ "r3:1", "led1:A", "green", [ "v0" ] ],
+      [ "led1:C", "pico:GND.2", "black", [ "v0", "h-28.4", "v-153.6", "h172.8", "v38.4" ] ],
+      [ "led2:C", "pico:GND.2", "black", [ "v0", "h-28.4", "v-105.6", "h172.8", "v28.8" ] ],
+      [ "led3:C", "pico:GND.2", "black", [ "v0", "h-28.4", "v-48", "h172.8", "v28.8" ] ]
+    ],
+    "dependencies": {}
+  }
