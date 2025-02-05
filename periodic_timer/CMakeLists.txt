@@ -41,7 +41,7 @@ pico_set_program_name(periodic_timer "periodic_timer")
 pico_set_program_version(periodic_timer "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(periodic_timer 0)
+pico_enable_stdio_uart(periodic_timer 1)
 pico_enable_stdio_usb(periodic_timer 1)
 
 # Add the standard library to the build
